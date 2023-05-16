@@ -3,6 +3,11 @@ import { Navbar, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const Header = ({ user }) => {
+
+  const logOut = () => {
+    window.open(`http://localhost:5000/auth/logout`, "_self")
+  }
+
   return (
     <div>
       <Navbar>
@@ -11,8 +16,20 @@ const Header = ({ user }) => {
           <Navbar.Toggle />
           {user ? (
             <Navbar.Collapse className="justify-content-end">
-              <Navbar.Text>
-                Ishu kushwaha: <a href="/login">Logout</a>
+              <Navbar.Text onClick={logOut}>
+                <ul className="list">
+                  <li className="listItem">
+                    <img
+                      src={user.photos[0].value}
+                      alt=""
+                      className="avatar"
+                    />
+                  </li>
+                  <li className="listItem">{user.displayName}</li>
+                  <li className="listItem" onClick={logOut}>
+                    Logout
+                  </li>
+                </ul>
               </Navbar.Text>
             </Navbar.Collapse>
           ) : (<Link to='/login' style={{ textDecoration: "none" }}>Login</Link>)}

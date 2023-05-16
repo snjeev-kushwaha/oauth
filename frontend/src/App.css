@@ -36,3 +36,57 @@
     transform: rotate(360deg);
   }
 }
+
+.list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.listItem {
+  margin-right: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 992px) {
+  .card {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .wrapper {
+    width: 65%;
+    height: 90%;
+    flex-direction: column;
+  }
+
+  .loginTitle {
+    display: none;
+  }
+
+  .center {
+    width: 100%;
+    position: relative;
+  }
+
+  .left {
+    padding: 20px;
+  }
+
+  .right {
+    padding: 20px;
+  }
+
+  .line {
+    height: 0.5px;
+    width: 300px;
+  }
+}
