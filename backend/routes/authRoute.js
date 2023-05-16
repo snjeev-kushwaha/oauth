@@ -41,4 +41,11 @@ authRoute.get("/github/callback", passport.authenticate("github", {
     failureRedirect: "/login/failed"
 }))
 
+authRoute.get("/facebook", passport.authenticate("facebook", { scope: ["profile"] }))
+
+authRoute.get("/facebook/callback", passport.authenticate("facebook", {
+    successRedirect: CLIENT_URL,
+    failureRedirect: "/login/failed"
+}))
+
 module.exports = { authRoute }
